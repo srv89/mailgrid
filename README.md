@@ -1,2 +1,2 @@
-# mailgrid
-Simple Email Service
+# Mailgrid
+An Email Service Aggregator
