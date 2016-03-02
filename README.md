@@ -1,0 +1,2 @@
+# mailgrid
+Simple Email Service
