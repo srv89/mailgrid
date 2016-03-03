@@ -14,3 +14,5 @@
 
 #### Issues
 * Still pushing to GitHub using wrong account
+	* Happens if previously pushed using other account 'ssadhoo'
+	* Try setting user.name, user.email and git remote set-url origin
