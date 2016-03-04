@@ -1,4 +1,5 @@
-var express = require('express');, router = express.Router();
+var express = require('express')
+  , router = express.Router();
 
 router.use('/health', require('./health'));
 
