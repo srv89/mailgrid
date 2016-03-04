@@ -1,10 +1,12 @@
-var express = require('express')
-  , router = express.Router()
+var express = require('express');, router = express.Router();
 
-router.use('/health', require('./health'))
+router.use('/health', require('./health'));
 
 router.get('/', function(req, res) {
-  res.send('Mailgrid API Root')
-})
+	res.json({
+		"status": 200,
+		"message": "Mailgrid API Root"
+	});
+});
 
-module.exports = router
+module.exports = router;

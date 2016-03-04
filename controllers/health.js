@@ -1,8 +1,11 @@
-var express = require('express')
-  , router = express.Router()
+var express = require('express'),
+	router = express.Router()
 
 router.get('/', function(req, res) {
-  res.json({"message": "Health Check OK"})
+	res.json({
+		"status": 200,
+		"message": "Health Check OK"
+	})
 })
 
 module.exports = router
