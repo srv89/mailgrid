@@ -1,11 +1,17 @@
-var config = require('../.env/config.js')
-console.log(config.POSTAGEAPP_API_KEY);
-var postageapp = require('postageapp')(config.POSTAGEAPP);
+var uuid = require('node-uuid');
+var ENV = process.env.NODE_ENV || 'development';
+
+if (ENV === "development") {
+	var config = require('../.env/config.js');
+	var postageapp = require('postageapp')(config.POSTAGEAPP_API_KEY);
+} else {
+	var postageapp = require('postageapp')(process.env.POSTAGEAPP_API_KEY);
+};
 
 
-var options = {
+var email = {
+	uid: uuid.v4(),
 	recipients: "sarveshsadhoo@gmail.com",
-
 	subject: "Subject Line",
 	from: "draven7@tt2dx90.com",
 
@@ -15,7 +21,8 @@ var options = {
 	}
 }
 
-postageapp.sendMessage(options, 
+
+postageapp.sendMessage(email, 
 	function (response, object) {
 		console.log('HTTP Status code: ', response.statusCode);
     	console.log('Message UID', object.response.uid);
