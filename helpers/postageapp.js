@@ -9,23 +9,31 @@ if (ENV === "development") {
 };
 
 
-var email = {
-	uid: uuid.v4(),
-	recipients: 'sarveshsadhoo@gmail.com',
-	subject: 'Test Message: PostageApp',
-	from: 'lwkr@ux.dob.jp',
 
-	content: {
-		'text/html': '<strong>Sample bold content.</strong>',
-		'text/plain': 'Plain text goes here'
+var sendEmail = function (email) {
+	var email = {
+		uid: uuid.v4(),
+		recipients: email.To,
+		subject: email.Subject,
+		from: 'lwkr@ux.dob.jp',
+
+		content: {
+			'text/plain': email.TextBody
+		}
 	}
+
+	return new Promise(function(resolve, reject) {
+		postageapp.sendMessage(email,
+			function(response, object) {
+				resolve(response)
+				console.log('HTTP Status code: ', response.statusCode);
+				console.log('Message UID', object.response.uid);
+			},
+			function(err, object) {
+				reject(err)
+				console.log('Ack! An error has occurred: ', err);
+			})
+	});
 }
 
-
-postageapp.sendMessage(email, 
-	function (response, object) {
-		console.log('HTTP Status code: ', response.statusCode);
-    	console.log('Message UID', object.response.uid);
-	}, function (err, object) {
-		 console.log('Ack! An error has occurred: ', err);
-})
+module.exports.sendEmail = sendEmail;

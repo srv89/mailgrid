@@ -11,9 +11,12 @@ router.post('/', function(req, res) {
 	
 	remoteHandler.executeRequest(body).then(function (success) {
 		res.json(success);
+        console.log(1);
 	}, function (error) {
 		res.status(500).json(error);
+        console.log(2);
 	}).catch(function (error) {
+        console.log(3);
 		res.status(500).send()
 	})
 });
