@@ -27,6 +27,7 @@
     "postageapp": "^1.1.4",
     "postmark": "^1.2.1",
     "request": "^2.69.0",
-    "sendgrid": "^2.0.0"
+    "sendgrid": "^2.0.0",
+    "underscore": "^1.8.3"
   }
 }

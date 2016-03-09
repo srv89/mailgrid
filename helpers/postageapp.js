@@ -11,9 +11,9 @@ if (ENV === "development") {
 
 var email = {
 	uid: uuid.v4(),
-	recipients: "sarveshsadhoo@gmail.com",
-	subject: "Subject Line",
-	from: "draven7@tt2dx90.com",
+	recipients: 'sarveshsadhoo@gmail.com',
+	subject: 'Test Message: PostageApp',
+	from: 'lwkr@ux.dob.jp',
 
 	content: {
 		'text/html': '<strong>Sample bold content.</strong>',

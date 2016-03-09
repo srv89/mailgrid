@@ -3,10 +3,9 @@ var express = require('express')
   , bodyParser = require('body-parser')
   , morgan = require('morgan')
 
-console.log();
 var controller = require('./controllers/health.js')
 
-var PORT = process.env.PORT || 3000
+var PORT = process.env.PORT || 5000
   , ENV = process.env.NODE_ENV || 'development'
 
 
