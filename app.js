@@ -17,7 +17,7 @@ if (ENV === 'development') {
 if (ENV !== 'development') {
     app.get('*', function(req, res, next) {
         if (req.headers['x-forwarded-proto'] != 'https'){
-            res.redirect('https://mypreferreddomain.com' + req.url);
+            res.redirect('https://mailgrid.herokuapp.com' + req.url);
         } else {
              next();
         }
