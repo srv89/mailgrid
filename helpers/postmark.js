@@ -5,7 +5,7 @@ if (ENV === "development") {
     var config = require('../.env/config.js');
     var client = new postmark.Client(config.POSTMARK_API_KEY);
 } else {
-    var client = new postmark.Client(config.POSTMARK_API_KEY);
+    var client = new postmark.Client(process.env.POSTMARK_API_KEY);
 };
 
 var sendEmail = function(email) {
