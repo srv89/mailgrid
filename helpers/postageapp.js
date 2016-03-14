@@ -26,12 +26,9 @@ var sendEmail = function (email) {
 		postageapp.sendMessage(email,
 			function(response, object) {
 				resolve(response)
-				console.log('HTTP Status code: ', response.statusCode);
-				console.log('Message UID', object.response.uid);
 			},
 			function(err, object) {
 				reject(err)
-				console.log('Ack! An error has occurred: ', err);
 			})
 	});
 }

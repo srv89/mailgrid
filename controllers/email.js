@@ -10,15 +10,12 @@ router.post('/', function(req, res) {
 	var body = _.pick(req.body, 'From', 'To', 'Cc', 'Bcc', 'Subject', 'HtmlBody', 'TextBody', 'ReplyTo');
 	
 	remoteHandler.executeRequest(body).then(function (success) {
-		res.json(success);
-        console.log(1);
+		res.json({"message": "OK"});
 	}, function (error) {
-		res.status(500).json(error);
-        console.log(2);
+		res.status(500).json({"message": "Failure"});
 	}).catch(function (error) {
-        console.log(3);
-		res.status(500).send()
-	})
+        res.status(500).json({"message": "Failure Catch"});
+    })
 });
 
 

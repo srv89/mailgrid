@@ -21,11 +21,11 @@ var sendEmail = function(email) {
   });
 
   return new Promise(function(resolve, reject) {
-    sendgrid.send(email, function(err, json) {
-      if (err) {
-        reject(err);
+    sendgrid.send(email, function(err, success) {
+      if (success) {
+        resolve(success);
       } else {
-        resolve(json);
+        reject(err);
       }
 
     });

@@ -19,11 +19,10 @@ var sendEmail = function(email) {
 
     return new Promise(function (resolve, reject) {
         client.sendEmail(email, function (error, success) {
-            if (error) {
-                console.log(error);
-                reject(error);
-            } else {
+            if (success) {
                 resolve(success);
+            } else {
+                reject(error);
             }
         });
     });
