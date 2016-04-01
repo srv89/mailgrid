@@ -5,18 +5,19 @@ var postageapp = require('./postageapp.js');
 
 function getEmailService() {
     var emailServiceName = {
-        1: 'postmark',
-        2: 'sendgrid',
-        3: 'postageapp'
+        1: 'sendgrid',
+        2: 'postageapp',
+        3: 'postmark'
     }
 
     var emailServiceObject = {
-        1: postmark,
-        2: sendgrid,
-        3: postageapp
+        1: sendgrid,
+        2: postageapp,
+        3: postmark
+
     }
 
-    var randomNumber = Math.floor(Math.random() * 3) + 1  ;
+    var randomNumber = Math.floor(Math.random() * 3) + 1;
     console.log("emailServiceName: ", emailServiceName[randomNumber])
     return emailServiceObject[randomNumber];
 
@@ -24,11 +25,8 @@ function getEmailService() {
 
 
 var executeRequest = function(payload) {
-    var emailService = getEmailService()
-    console.log("emailService: ", emailService);
-
     return new Promise(function(resolve, reject) {
-        emailService.sendEmail(payload).then(function(success) {
+        getEmailService().sendEmail(payload).then(function(success) {
             console.log("remoteHandler success");
             resolve(success);
         }, function(error) {

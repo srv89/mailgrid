@@ -22,12 +22,12 @@ var sendEmail = function (email) {
 		}
 	}
 
-	return new Promise(function(resolve, reject) {
+	return new Promise(function (resolve, reject) {
 		postageapp.sendMessage(email,
-			function(response, object) {
+			function (response, object) {
 				resolve(response)
 			},
-			function(err, object) {
+			function (err, object) {
 				reject(err)
 			})
 	});

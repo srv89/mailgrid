@@ -10,10 +10,10 @@ if (ENV === "development") {
 
 var sendEmail = function(email) {
     var email = {
-        "From": "lwkr@ux.dob.jp",
-        "To": email.To,
-        "Subject": email.Subject,
-        "TextBody": email.TextBody
+        From: "lwkr@ux.dob.jp",
+        Subject: email.Subject,
+        To: email.To,
+        TextBody: email.TextBody
 
     }
 
