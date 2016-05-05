@@ -1,12 +1,12 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    morgan = require('morgan')
+    morgan = require('morgan');
 
-var controller = require('./controllers/health.js')
+var controller = require('./controllers/health.js');
 
 var PORT = process.env.PORT || 5000,
-    ENV = process.env.NODE_ENV || 'development'
+    ENV = process.env.NODE_ENV || 'development';
 
 
 if (ENV === 'development') {
