@@ -1,2 +1,2 @@
 # Mailgrid
-Ridiculously Simple Email Service
+Ridiculously Simple Email Service (Work In Progess)
